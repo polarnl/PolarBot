@@ -88,4 +88,4 @@ async function handleCloseTicketButton(interaction: any): Promise<void> {
         console.error("Error closing ticket via button:", error);
         await interaction.editReply("❌ An error occurred while closing the ticket.");
     }
-} 
+}

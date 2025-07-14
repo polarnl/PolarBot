@@ -1,27 +1,16 @@
-import { MongoClient } from 'mongodb';
-let db = null;
+import dotenv from "dotenv";
+dotenv.config();
+import { MongoClient } from "mongodb";
+const uri = process.env["MONGODB_URI"];
+const client = new MongoClient(uri);
+const dbName = process.env["DB_NAME"] || "polarbot";
 export async function connectToDatabase() {
-    if (db) {
-        return db;
-    }
-    const mongoUri = process.env['MONGODB_URI'];
-    if (!mongoUri) {
-        throw new Error('MONGODB_URI environment variable is not set');
-    }
-    const client = new MongoClient(mongoUri);
     await client.connect();
-    db = client.db('polarBot');
-    console.log('Connected to MongoDB');
-    return db;
+    return client.db(dbName);
 }
-export async function getDatabase() {
-    if (!db) {
-        return await connectToDatabase();
-    }
-    return db;
+export async function getCollection(name) {
+    await client.connect();
+    return client.db(dbName).collection(name);
 }
-export async function getCollection(collectionName) {
-    const database = await getDatabase();
-    return database.collection(collectionName);
-}
+``;
 //# sourceMappingURL=database.js.map

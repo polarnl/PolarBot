@@ -1,10 +1,11 @@
 import dotenv from "dotenv";
+dotenv.config();
 import { Client, Collection, GatewayIntentBits } from "discord.js";
 import fs from "fs";
 import path from "path";
 import { connectToDatabase } from "./utils/database.js";
 import { Scheduler } from "./utils/scheduler.js";
-dotenv.config();
+console.log("MONGODB_URI:", process.env["MONGODB_URI"]); // Use brackets
 const { token } = process.env;
 const client = new Client({
     intents: [
