@@ -1,1 +1,0 @@
-{"version":3,"file":"ready.js","sourceRoot":"","sources":["../../../src/events/client/ready.ts"],"names":[],"mappings":"AAAA,OAAO,EAAU,MAAM,EAAE,MAAM,YAAY,CAAC;AAE5C,eAAe;IACX,IAAI,EAAE,MAAM,CAAC,WAAW;IACxB,IAAI,EAAE,IAAI;IACV,KAAK,CAAC,OAAO,CAAC,MAAc;QACxB,OAAO,CAAC,GAAG,CAAC,UAAU,MAAM,CAAC,IAAI,EAAE,GAAG,2BAA2B,CAAC,CAAC;IACvE,CAAC;CACJ,CAAC"}
