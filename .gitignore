@@ -129,6 +129,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# discordjs no token config.json
-config.json
-/prisma/src/prisma-client
+/src/prisma-client

@@ -51,8 +51,8 @@ export async function loadStructures<T>(
 			continue;
 		}
 
-		// If the file is index.js or the file does not end with .js, skip the file
-		if (file === 'index.js' || !file.endsWith('.js')) {
+		// If the file is index.js/index.ts or the file does not end with .js/.ts, skip the file
+		if (file === 'index.js' || file === 'index.ts' || (!file.endsWith('.js') && !file.endsWith('.ts'))) {
 			continue;
 		}
 

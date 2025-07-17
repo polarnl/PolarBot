@@ -69,10 +69,6 @@ export default {
     // Validate duration format if provided
     if (duration !== "0" && durationMs === null) {
       embed.setColor(0xef4444);
-      embed.setAuthor({
-        name: interaction.client.user?.username,
-        iconURL: interaction.client.user?.displayAvatarURL(),
-      });
       embed.setTimestamp();
       embed.setTitle("❌ | Error");
       embed.setDescription(
@@ -88,10 +84,6 @@ export default {
     // Check if the user has permission to ban members
     if (!interaction.memberPermissions?.has("BanMembers")) {
       embed.setColor(0xef4444);
-      embed.setAuthor({
-        name: interaction.client.user?.username,
-        iconURL: interaction.client.user?.displayAvatarURL(),
-      });
       embed.setTimestamp();
       embed.setTitle("❌ | Error");
       embed.setDescription(
@@ -107,10 +99,6 @@ export default {
     const member = interaction.guild?.members.cache.get(banTarget.id);
     if (member && !member.bannable) {
       embed.setColor(0xef4444);
-      embed.setAuthor({
-        name: interaction.client.user?.username,
-        iconURL: interaction.client.user?.displayAvatarURL(),
-      });
       embed.setTimestamp();
       embed.setTitle("❌ | Error");
       embed.setDescription(
@@ -142,10 +130,6 @@ export default {
               inline: false
             }
           ])
-          .setAuthor({
-            name: interaction.client.user?.username,
-            iconURL: interaction.client.user?.displayAvatarURL(),
-          })
           .setTimestamp();
 
         await interaction.client.users.send(banTarget.id, { embeds: [banDmEmbed] });
@@ -220,10 +204,6 @@ export default {
       }
 
       embed.setColor(0x22c55e);
-      embed.setAuthor({
-        name: interaction.client.user?.username,
-        iconURL: interaction.client.user?.displayAvatarURL(),
-      });
       embed.setTimestamp();
       embed.setTitle("✅ | Verbannen");
 
