@@ -6,7 +6,8 @@ import chalk from "chalk";
 
 try {
   const { config } = await import("dotenv");
-  config();
+  // Load .env from monorepo root (../../.env relative to src/index.ts)
+  config({ path: new URL("../../../.env", import.meta.url).pathname });
   console.log(chalk.green("✅ | Omgevingsvariabelen geladen!"));
 } catch (error) {
   console.log(

@@ -8,7 +8,7 @@ export default {
 	name: Events.ClientReady,
 	once: true,
 	async execute(client) {
-		prisma.$connect().catch((error) => {
+		prisma.$connect().catch((error: unknown) => {
 			console.error(chalk.red('‼️ | Fout bij het verbinden met de database:', error));
 			console.error(chalk.red('==============================='));
 			console.error(chalk.red('‼️ | PolarBot\'s proces zal nu afgebroken worden...'));

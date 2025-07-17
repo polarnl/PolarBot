@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig.json",
+	"extends": [
+		"@sapphire/ts-config",
+		"@sapphire/ts-config/extra-strict"
+	],
+	"compilerOptions": {
+		"declaration": true,
+		"declarationMap": false,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"target": "ESNext",
+		"outDir": "dist",
+		"skipLibCheck": true,
+		"composite": true
+	},
+	"references": [
+		{
+			"path": "../../packages/database"
+		}
+	]
+}

@@ -1,13 +1,29 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig.json",
-	"extends": ["@sapphire/ts-config", "@sapphire/ts-config/extra-strict"],
 	"compilerOptions": {
+		"target": "ES2022",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"allowJs": true,
+		"checkJs": false,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
 		"declaration": false,
 		"declarationMap": false,
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
-		"target": "ESNext",
-		"outDir": "dist",
-		"skipLibCheck": true
-	}
+		"outDir": "dist"
+	},
+	"references": [
+		{
+			"path": "./packages/database"
+		},
+		{
+			"path": "./apps/bot"
+		},
+		{
+			"path": "./apps/web-api"
+		}
+	]
 }
