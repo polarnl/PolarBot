@@ -1,10 +1,10 @@
 import { EmbedBuilder } from 'discord.js';
-import type { Command } from './index.js';
+import type { Command } from '../index.js';
 
 export default {
 	data: {
 		name: 'ping',
-		description: 'Ping!',
+		description: 'Pong!',
 	},
 	async execute(interaction) {
 		const embed = new EmbedBuilder()
@@ -12,7 +12,7 @@ export default {
 				name: interaction.client.user?.username,
 				iconURL: interaction.client.user?.displayAvatarURL(),
 			})
-			.setDescription(`Pong! 🏓\nLatency: ${Date.now() - interaction.createdTimestamp}ms`)
+			.setDescription(`Pong! 🏓\nAntwoordtijd: ${Date.now() - interaction.createdTimestamp}ms`)
 			.setTimestamp()
 			.setColor(0x38bdf8)
 

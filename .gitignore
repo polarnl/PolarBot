@@ -131,3 +131,4 @@ dist
 
 # discordjs no token config.json
 config.json
+/prisma/src/prisma-client
