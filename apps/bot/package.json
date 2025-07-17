@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@polarbot/bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "lint": "prettier --check . && eslint --ext .ts --format=pretty src",
+    "deploy": "node --require dotenv/config dist/util/deploy.js",
+    "format": "prettier --write . && eslint --ext .ts --fix --format=pretty src",
+    "start": "node --require dotenv/config dist/index.js",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@discordjs/core": "^2.1.1",
+    "@polarbot/database": "workspace:*",
+    "chalk": "^5.4.1",
+    "discord.js": "^14.20.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@sapphire/ts-config": "^5.0.1",
+    "@types/node": "^22.10.10",
+    "eslint": "^9.24.0",
+    "eslint-config-neon": "^0.2.7",
+    "eslint-formatter-compact": "^8.40.0",
+    "eslint-formatter-pretty": "^6.0.1",
+    "prettier": "^3.5.3",
+    "tsx": "^4.20.3",
+    "typescript": "~5.5.4",
+    "zod": "^3.24.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
